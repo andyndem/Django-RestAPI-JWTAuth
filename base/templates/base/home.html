@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Advocates</title>
+    <link rel="stylesheet" href="{% static 'base/styles/base.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'base/styles/advo-details.css' %}" /> {% endcomment %} 
+  </head>
+  <body>
+    <header id="main-header">
+      <nav>
+        <h4>Tandem API's</h4>
+      </nav>
+      <h1>Advocates Dashboard</h1>
+      <p><strong>This App serves Advocates API Endpoints</strong></p>
+    </header>
+    <main>
+      <section>
+        <h2>Advocates List</h2>
+        <ul>
+          {% for advocate in advocates %}
+          <li class="meetup-item">
+            <article>
+              <div class="meetup-summary">
+                <div class="meetup-image">
+                  <img src="" alt="" />
+                </div>
+
+                <div class="meetup-details">
+                  <h3>{{ advocate.username }}</h3>
+                </div>
+              </div>
+              <div class="meetup-actions">
+                <button class="btn btn-outline-primary"><a href="{% url 'advocate-details' advocate.username %}">Details</a>
+                </button>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
