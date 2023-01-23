@@ -23,9 +23,9 @@ button,
   cursor: pointer;
   font: inherit;
   padding: 0.5rem 1.5rem;
-  background-color: #eae8ee;
+  background-color: #a40606;
   border: 3px solid #350490;
-  color: rgb(235, 224, 224);
+  color: #ccc3db;
   border-radius: 4px;
   text-decoration: none;
 }

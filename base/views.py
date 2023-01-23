@@ -16,9 +16,18 @@ def home(request):
     return render(request, 'base/home.html', {'advocates': data})
 # return HttpResponse("Welcome to Andy's Django world!!")
 
-def advocate_details(request, username):
-  data = Advocate.objects.get(username=username)
-  return render(request, 'base/advocate-detail.html', {'advocate': data})
+def advocate_details(request, name):
+  try:
+    selected_name = Advocate.objects.get(username=name)
+    return render(request, 'base/advocate-detail.html', {
+      'advoc_found': True,
+      'advoc_name': selected_name.username,
+      'advoc_bio': selected_name.bio,
+      })
+  except Exception as exc:
+    return render(request, 'base/advocate-detail.html', {
+      'advoc_found': False
+    })
 
 # def detail(request):
 #   products=Product.objects.get(id=product.id)

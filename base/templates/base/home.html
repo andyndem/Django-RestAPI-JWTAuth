@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Advocates</title>
     <link rel="stylesheet" href="{% static 'base/styles/base.css' %}" />
-    {% comment %} <link rel="stylesheet" href="{% static 'base/styles/advo-details.css' %}" /> {% endcomment %} 
+    {% comment %} <link rel="stylesheet" href="{% static 'base/styles/advo-details.css' %}" /> {% endcomment %}
   </head>
   <body>
     <header id="main-header">
@@ -15,7 +15,10 @@
         <h4>Tandem API's</h4>
       </nav>
       <h1>Advocates Dashboard</h1>
-      <p><strong>This App serves Advocates API Endpoints</strong></p>
+      <p>
+        <strong
+          >This App serves Advocates API Endpoints ... "/endpoints"</strong>
+      </p>
     </header>
     <main>
       <section>
@@ -34,8 +37,8 @@
                 </div>
               </div>
               <div class="meetup-actions">
-                <button class="btn btn-outline-primary"><a href="{% url 'advocate-details' advocate.username %}">Details</a>
-                </button>
+                  <a href="{% url 'advocate-detail' advocate.username %}"
+                    class="btn">Details</a>     
               </div>
             </article>
           </li>

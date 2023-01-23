@@ -7,17 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advocates Detail</title>
     <link rel="stylesheet" href="{% static 'base/styles/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'base/styles/advo_details.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'base/styles/advo_details.css' %}" /> {% endcomment %}
   </head>
   <body>
     <main>
       <article>
         <img scr="" alt="" />
+        {% if advoc_found %}
         <section>
+          <section id="details">
           <h2>Advocate Details</h2>
-          <h3>{{ advocate.username }}</h3>
-          <p>{{ advocate.bio }}</p>
+          <h3>{{ advoc_name }}</h3>
+          <p>{{ advoc_bio }}</p>
         </section>
+        {% else %}
+          <p> No Advocates found for this request, sorry! </p>
+        {% endif %}
       </article>
     </main>
   </body>
